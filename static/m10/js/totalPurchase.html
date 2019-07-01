@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>totalPurchase</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="./fontello-c30f7b78/css/fontello.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <script>
+        $(document).ready(function(){
+            checkLine();
+            $("#estimateOrder").click(function(){
+                var page = $(this).attr("url");
+                var url = page + ".html";
+                //페이지 갱신 실행
+                history.pushState(null, null, url);
+                event.preventDefault();
+            });
+
+            $("#checkbox").click(function(){
+                if($("#check-body").attr("class")){
+                  $("#check-body").removeClass("dn");
+                } else {
+                  $("#check-body").addClass("dn");
+                }
+            });
+//              $(".cb-col").click(function() {
+//                colHS();
+//              });
+
+            $(window).resize(function() {
+                var sx = Number($(window).width());
+                var index = $(".cb-col").index(this);
+                if(sx > 768) {
+                    $(".cb-col").prop("checked", true);
+                } else if(sx > 576) {
+                    $(".cb-col").eq(5).prop("checked", false);
+                }
+                else {
+                    $(".cb-col").eq(5).prop("checked", false);
+                  }
+                colHS();
+
+
+            });
+            function colHS(){
+                for(var x = 0; x < $(".cb-col").length; x++){
+                  for(var i = 0; i < $(".col-body").length; i++){
+                    if($(".cb-col").eq(x).prop("checked")){
+                      $(".col-body").eq(i).find("li").eq(x).removeClass("dn");
+                    } else {
+                      $(".col-body").eq(i).find("li").eq(x).addClass("dn");
+                    }
+                  }
+                }
+                  /*
+                var cnt = $(".cb-col").filter(":checked").length;
+                var width = Number($(".col-body").css("width").replace("px", "")) / cnt;
+                $(".col-body li").css("width", width + "px");
+                */
+            }
+            function checkLine(){
+                var win = $(window).width();
+                if(win >100 && win < 768){
+                    if($(".cb-col").eq(5).prop("checked")){
+                           $(".cb-col").eq(5).prop("checked",false);
+                    }
+                    colHS();
+                }
+
+            }
+        });
+
+
+//    function openPage(pageName) {
+//        var i;
+//        document.getElementsById("estimateOrder");
+////      for (i = 0; i < tabcontent.length; i++) {
+////        tabcontent[i].style.display = "none";
+////      }
+//
+//    // Get the element with id="defaultOpen" and click on it
+//    document.getElementById("defaultOpen").click();
+    </script>
+</head>
+<body>
+    <div class="nav1">
+        <a href="index.html"><h2>견적주문</h2></a>
+        <hr>
+        <nav>
+            <br>
+            <div>
+                <a href="totalEstimate.html"><strong>견적서</strong></a>
+            </div>
+            <br>
+            <div>
+                <a href="totalOrder.html"><strong>주문/판매</strong></a>
+            </div>
+            <br>
+            <div>
+                <a href="totalPurchase.html"><strong>발주/매입</strong></a>
+            </div>
+        </nav>
+    </div>
+
+    <section>
+        <div class="nav2">
+            <div class="dropdown" >
+                <br>
+                <button type="button" class="dropbtn"><i class="fa fa-list" style="font-size: 24px;"></i></button>
+                <div class="dropdown-content">
+                    <a href="index.html"><strong>HOME</strong></a>
+                    <a href="totalEstimate.html">견적서</a>
+                    <a href="totalOrder.html">주문판매</a>
+                    <a href="totalPurchase.html">발주매입</a>
+                </div>
+            </div>
+        </div>
+        <div class="headNm">발주 / 매입</div>
+        <br>
+        <div id="purchase" class="padding">
+            <div class="body tc">
+            <span id="check-body">
+              <input type="checkbox" class="cb-col" checked>
+              <input type="checkbox" class="cb-col" checked>
+              <input type="checkbox" class="cb-col" checked>
+              <input type="checkbox" class="cb-col" checked>
+              <input type="checkbox" class="cb-col" checked>
+              <input type="checkbox" class="cb-col" checked>
+            </span>
+            <button type="button" id="checkbox">확인</button>
+          </div>
+            <div class="body">
+                <ul class="tab-body">
+                  <li class="tab-row">
+                    <ul class="col-body bg">
+                        <li>NO. <input type="checkbox" name="purchase"></li>
+                        <li><strong>발주처</strong></li>
+                        <li><strong>발주명</strong></li>
+                        <li><strong>발주상태</strong></li>
+                        <li><strong>작성자</strong></li>
+                        <li><strong>등록일</strong></li>
+                    </ul>
+                  </li>
+                  <li class="tab-row">
+                    <ul class="col-body">
+                        <li><input type="checkbox" name="purchase"></li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ul>
+                  </li>
+                  <li class="tab-row">
+                    <ul class="col-body">
+                        <li><input type="checkbox" name="purchase"></li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ul>
+                  </li>
+                  <li class="tab-row">
+                    <ul class="col-body">
+                        <li><input type="checkbox" name="purchase"></li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ul>
+                  </li>
+                  <li class="tab-row">
+                    <ul class="col-body">
+                        <li><input type="checkbox" name="purchase"></li>
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                    </ul>
+                  </li>
+                </ul>
+
+            </div>
+            <br>
+            <div class="right">
+                <form action="purchase.html">
+<!--                    <input type="submit" value="수  정">-->
+                    <input type="submit" value="글쓰기">
+                </form>
+            </div>
+        </div>
+
+
+    </section>
+    <footer>
+        <div class="footContainer">
+            <h3>구디 아카데미</h3>
+            <div class="foot20">
+                <p>Visit</p>
+                <p>New Business</p>
+                <p>Follow</p>
+            </div>
+            <div class="foot80">
+                <div>
+                    ·08505 서울시 금천구 가산디지털2로
+                    <br>
+                    ·115, 509호, 811호(가산동, 대륭테크노타운3차)
+                </div>
+                <div>
+                    ·nhr1225@naver.com
+                    <br>
+                    ·전화 : 02-2108-5900
+                    ·팩스 : 02-2108-5999
+                </div>
+                <div>
+                    <a href="https://ko-kr.facebook.com/goodee0205/"><i class="fa fa-facebook-official"></i></a>
+                    <a href="https://www.instagram.com/it_edu_goodee/?hl=ko"><i class="fa fa-instagram"></i></a>
+                    <a href="http://www.gdu.co.kr/main/main.html"><i class="fa fa-internet-explorer" ></i></a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+</body>
+</html>

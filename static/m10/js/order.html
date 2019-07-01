@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>order</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <!--
+                    <i class="fa fa-plus-circle add"></i>
+                    <i class="fa fa-minus-circle"></i>
+        -->
+        <link rel="stylesheet" href="../css/order.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+               $("#add").change(function(){
+                   if($("#add").val() != ""){
+                       var cnt = $("body li").length + 1;
+                       var 상품 = $("#add").val();
+                       var html = `<li>
+                                    <div class="row-1">번호 : ${cnt}   |  상품 : ${상품}</div>
+                                    <div class="row-2 dn">
+                                        <div>
+                                            <div>기간설정</div>
+                                            <table border="1" style="text-align: center">
+                                                <tr>
+                                                    <th>서비스기간</th>
+                                                    <th>청구일</th>
+                                                    <th>수금일</th>
+                                                </tr>
+                                                <tr>
+                                                    <td><input type="date"></td>
+                                                    <td><input type="date"></td>
+                                                    <td><input type="date"></td>
+                                                </tr>
+                                            </table>
+                                            <br>
+                                            <div>
+                                                <div>공급가</div>
+                                                <input type="text" placeholder="price(￦)"  class="textSize1">
+                                            </div>
+                                            <br>
+                                            <div>
+                                               <div>수  량</div>
+                                                <input type="number" placeholder="amount"  class="textSize1">
+                                            </div>
+                                            <br>
+                                            <div>
+                                                <div>공급가 합계</div>
+                                                <input type="text" placeholder="total(￦)"  class="textSize1">
+                                            </div>
+                                            <br>
+                                            <div>
+                                                <div>세  금</div>
+                                                <input type="text" name="10%" placeholder="tax(10%)"  class="textSize1">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>`;
+                       $("#body").append(html);
+                       $(".row-2").addClass("dn");
+
+                       $("body li .row-1").off().on("click", function(){
+                           var index = $("body li .row-1").index(this);
+                           var check = true;
+
+                           if($(".row-2").eq(index).attr("class").indexOf("dn") < 0)
+                           {
+
+                               $(".row-2").addClass("dn");
+                               check = false;
+                           }
+                           if(check) {
+
+                                $(".row-2").addClass("dn");
+                                $(".row-2").eq(index).removeClass("dn");
+                           }
+
+                       });
+                   }
+               })
+            });
+
+//                $(".product .remove").click(function(){
+//
+//                   $(".product div > input:last ").remove(add);
+//                });
+//            });
+
+            function goBack() {
+              location.replace("totalOrder.html")
+            }
+
+        </script>
+    </head>
+    <body>
+        <div>
+            <h1>상품구매</h1>
+            <hr>
+            <br>
+            <div>
+                <div class="center">
+                    <div class="font_box">판매합계</div>
+                    <div >
+                        <table border="1" class="tableSize">
+                            <tr>
+                                <th>공급가</th>
+                                <th>합  계</th>
+                            </tr>
+                            <tr>
+                                <td><input type="text" placeholder="price (￦)"></td>
+                                <td><input type="text" placeholder="totalPrice (￦)"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="center width50">
+                    <div class="font_box marginBt">작 성 자</div>
+                    <input type="text" placeholder="writerNm" class="textSize1-2">
+                </div>
+                <div class="center width50 right" >
+                    <div class="font_box marginBt">등 록 일</div>
+                    <input type="date" class="textSize1-2">
+                </div>
+            </div>
+            <div class="center">
+                <div class="font_box">구매상품</div>
+                <br>
+                <select id="add" class="textSize3">
+                    <option value="">상품추가</option>
+                    <option value="냉장고">냉장고</option>
+                    <option value="TV">TV</option>
+                    <option value="빔">빔</option>
+                    <option value="콤퓨터">콤퓨터</option>
+                </select>
+                <ul id="body"></ul>
+            </div>
+        </div>
+        <hr>
+        <footer>
+            <div class="right">
+                <div class="left">
+                    <button onclick="goBack()">취  소</button>
+                    <button>저  장</button>
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

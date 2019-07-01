@@ -1,0 +1,58 @@
+html, body {margin: 0; padding: 0;}
+
+h1 {text-align: center; background-image: url(%ED%95%9C%EC%A7%80images.jpg); margin: 0; padding: 20px 0;}
+.backg {background-image: url(%ED%95%9C%EC%A7%80images.jpg);}
+hr{margin-top: 0; margin-bottom: 0;}
+footer{width: 100%; background-image: url(%ED%95%9C%EC%A7%80images.jpg); height: 65px;}
+.right {float: right; padding-right: 30px;}
+.right::after{clear: both;}
+.left {float: left; margin-right: 15px;}
+.left::after{clear: both;}
+
+button{padding: 10px; width: 60px; margin-top: 10px;}
+
+/*
+.container {
+    box-sizing: border-box;
+    text-align: left;
+    padding: 0 10%;
+}
+*/
+
+.buttonSize{text-align: left; box-sizing: border-box; float: right}
+.center{display: inline-block; box-sizing: border-box;  width: 100%; padding: 15px;}
+.textSize1{width: 80%; height: 40px; text-align: left; font-family: inherit}
+.textSize1-2 {width: 80%; height: 40px; text-align: left; font-family: inherit}
+.textSize2{width: 80%; height: 100px; text-align: left; font-family: inherit; display: inline-block;}
+.textSize3{width: 50%; height: 10px; text-align: left; font-family: inherit}
+p {float: left;}
+/************************************************************************************************/
+.font_box {padding: 15px; float: left; background-color: cornsilk; border-radius: 25%; margin-right: 10px; width: 15%; text-align: center; margin-bottom: 10px;}
+.font_box::after {clear: both;}
+.center{display: inline-block; box-sizing: border-box;  width: 100%; padding: 15px;}
+
+/******************************************************************/
+
+
+@media screen and (max-width: 768px){
+    .textSize1-2 {width: 100%;}
+
+    .textSize2{width: 100%;}
+    .width50 {width: 50%;}
+
+}
+
+
+@media screen and (max-width:576px){
+
+    .tableSize {font-size: 15px;}
+    .tableSize input {width: 145px;}
+    .row-2 table{font-size: 15px;}
+    .row-2 table input {width: 92px;}
+    .left {padding: 0; margin: 0;}
+    .right {padding-right: 15px;}
+    .center{width: 100%;}
+    .textSize1-2 {width: 100%;}
+
+
+}

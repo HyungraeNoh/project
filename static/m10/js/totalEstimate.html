@@ -43,11 +43,18 @@
 //              $(".cb-col").click(function() {
 //                colHS();
 //              });
+// //          견적서테이블 hover효과
+//             $(".col-body").hover(function(){
+//                 $(this).css("background-color", "lightgray");
+//                 }, function(){
+//                 $(this).css("background-color", "white");
+//             });
+
 
             $(window).resize(function() {
                 var sx = Number($(window).width());
                 var index = $(".cb-col").index(this);
-                if(sx > 768) {
+                if(sx > 801) {
                     $(".cb-col").prop("checked", true);
                 } else if(sx > 576) {
                     $(".cb-col").eq(5).prop("checked", false);
@@ -78,14 +85,13 @@
             }
             function checkLine(){
                 var win = $(window).width();
-                if(win >100 && win < 768){
+                if(win >100 && win < 801){
                     if($(".cb-col").eq(5).prop("checked")){
                            $(".cb-col").eq(5).prop("checked",false);
                     }
-                    colHS();
-//                    backg();
-                }
 
+                }
+                colHS();
             }
         });
 
@@ -103,20 +109,20 @@
 </head>
 <body>
     <div class="nav1">
-        <a href="index.html"><h2>견적주문</h2></a>
+        <a href="../index.html"><h2>견적주문</h2></a>
         <hr>
         <nav>
             <br>
             <div>
-                <a href="totalEstimate.html"><strong>견적서</strong></a>
+                <a href="./totalEstimate.html"><strong>견적서</strong></a>
             </div>
             <br>
             <div>
-                <a href="totalOrder.html"><strong>주문/판매</strong></a>
+                <a href="./totalOrder.html"><strong>주문/판매</strong></a>
             </div>
             <br>
             <div>
-                <a href="totalPurchase.html"><strong>발주/매입</strong></a>
+                <a href="./totalPurchase.html"><strong>발주/매입</strong></a>
             </div>
         </nav>
     </div>
@@ -127,10 +133,10 @@
                 <br>
                 <button type="button" class="dropbtn"><i class="fa fa-list" style="font-size: 24px;"></i></button>
                 <div class="dropdown-content">
-                    <a href="index.html"><strong>HOME</strong></a>
-                    <a href="totalEstimate.html">견적서</a>
-                    <a href="totalOrder.html">주문판매</a>
-                    <a href="totalPurchase.html">발주매입</a>
+                    <a href="../index.html"><strong>HOME</strong></a>
+                    <a href="./totalEstimate.html">견적서</a>
+                    <a href="./totalOrder.html">주문판매</a>
+                    <a href="./totalPurchase.html">발주매입</a>
                 </div>
             </div>
         </div>
@@ -163,41 +169,41 @@
                   <li class="tab-row">
                     <ul class="col-body">
                         <li><input type="checkbox" name="estimate"></li>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
+                        <li>아이언맨</li>
+                        <li>빔 구매</li>
+                        <li>Y</li>
+                        <li>구디</li>
+                        <li>20190606</li>
                     </ul>
                   </li>
                   <li class="tab-row">
                     <ul class="col-body">
                         <li><input type="checkbox" name="estimate"></li>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
+                        <li>헐크</li>
+                        <li>책 구매</li>
+                        <li>N</li>
+                        <li>구디</li>
+                        <li>20190622</li>
                     </ul>
                   </li>
                   <li class="tab-row">
                     <ul class="col-body">
                         <li><input type="checkbox" name="estimate"></li>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
+                        <li>토르</li>
+                        <li>맥주 구매</li>
+                        <li>N</li>
+                        <li>구디</li>
+                        <li>20190622</li>
                     </ul>
                   </li>
                   <li class="tab-row">
                     <ul class="col-body">
                         <li><input type="checkbox" name="estimate"></li>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
+                        <li>블랙팬서</li>
+                        <li>TV 구매</li>
+                        <li>Y</li>
+                        <li>구디</li>
+                        <li>20190623</li>
                     </ul>
                   </li>
                 </ul>
@@ -205,7 +211,7 @@
             </div>
             <br>
             <div class="right">
-                <form action="estimate.html">
+                <form action="./estimate.html">
 <!--                    <input type="submit" value="수  정">-->
                     <input type="submit" value="글쓰기">
                 </form>

@@ -1,9 +1,9 @@
 html, body {margin: 0; padding: 0;}
 
-h1 {text-align: center; background-image: url(%ED%95%9C%EC%A7%80images.jpg); margin: 0; padding: 20px 0;}
-.backg {background-image: url(%ED%95%9C%EC%A7%80images.jpg);}
+h1 {text-align: center; background-image: url(../img/한지images.jpg); margin: 0; padding: 20px 0;}
+.backg {background-image: url(../img/한지images.jpg);}
 hr{margin-top: 0; margin-bottom: 0;}
-footer{width: 100%; background-image: url(%ED%95%9C%EC%A7%80images.jpg); height: 65px;}
+footer{width: 100%; background-image: url(../img/한지images.jpg); height: 65px;}
 .right {float: right; padding-right: 30px;}
 .right::after{clear: both;}
 .left {float: left; margin-right: 15px;}
@@ -34,7 +34,7 @@ p {float: left;}
 /******************************************************************/
 
 
-@media screen and (max-width: 768px){
+@media screen and (max-width: 800px){
     .textSize1-2 {width: 100%;}
 
     .textSize2{width: 100%;}

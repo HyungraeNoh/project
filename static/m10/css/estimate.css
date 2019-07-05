@@ -34,7 +34,7 @@ p {float: left;}
 /******************************************************************/
 
 
-@media screen and (max-width: 800px){
+@media screen and (max-width: 768px){
     .textSize1-2 {width: 100%;}
 
     .textSize2{width: 100%;}

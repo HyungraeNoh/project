@@ -27,8 +27,9 @@ tabel input {width: 97%;}
 button{padding: 10px; width: 60px; margin-top: 10px;}
 
 .textSize1{width: 99%; height: 40px; text-align: left; font-family: inherit;}
-.textSize1-2 {width: 80%; height: 40px; text-align: left; font-family: inherit}
-.textSize2{width: 80%; height: 100px; text-align: left; font-family: inherit; display: inline-block;}
+.textSize1-2 {width: calc(100% - 115px); height: 40px; text-align: left; font-family: inherit}
+.textSize2{width: 80%; min-height: 100px; text-align: left; font-family: inherit; display: inline-block;}
+.textSize2-2{width: calc(100% - 115px); height: 40px; text-align: left; font-family: inherit;}
 .textSize3{height: 25px; font-family: inherit}
 .width50 {width: 48%;}
 
@@ -40,13 +41,15 @@ li {padding: 10px 0; background-color: antiquewhite; border-bottom: 1px solid #c
 .marginBt{margin-bottom: 10px;}
 .dn {display: none;}
 /************************************************************************/
-.font_box {padding: 15px; float: left; background-color: cornsilk; border-radius: 25%; margin-right: 15px;}
+.font_box {text-align: center; padding: 15px; float: left; background-color: cornsilk; border-radius: 25%; margin-right: 15px;}
 .font_box::after {clear: both;}
 
 /*************************************************************/
-@media screen and (max-width: 800px){
-    .textSize1-2 {width: 100%;}
+@media screen and (max-width: 768px){
+
+    .textSize2-2 {width: 100%;}
     .width50 {width: 50%;}
+    .textSize1-2 {width: 100%;}
 
 }
 
@@ -61,4 +64,5 @@ li {padding: 10px 0; background-color: antiquewhite; border-bottom: 1px solid #c
     .right {padding-right: 15px;}
     .center{width: 100%;}
     .textSize1-2 {width: 100%;}
+    .textSize2-2 {width: 100%;}
 }

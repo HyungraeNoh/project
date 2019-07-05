@@ -44,6 +44,9 @@
                                             <div>
                                                 <div>계약/지불조건</div>
                                                 <textarea class="textSize2" placeholder="Terms of payment"></textarea>
+                                                <div style="text-align: center;">
+                                                  <button>적  용</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -76,20 +79,24 @@
     </head>
     <body>
         <div>
-            <h1>상품구매</h1>
+            <h1>발주/매입</h1>
             <hr>
             <br>
             <div>
+              <div class="center">
+                <div class="font_box marginBt">발주번호</div>
+                <input type="text" placeholder="purchaseNumber" class="textSize2-2">
+              </div>
                 <div class="center">
-                    <div class="font_box">판매합계</div>
+                    <div class="font_box">발주합계</div>
                     <div >
                         <table border="1" class="tableSize">
                             <tr>
-                                <th>공급가</th>
+                                <th>발주수량</th>
                                 <th>합  계</th>
                             </tr>
                             <tr>
-                                <td><input type="text" placeholder="price (￦)"></td>
+                                <td><input type="text" placeholder="totalAmount"></td>
                                 <td><input type="text" placeholder="totalPrice (￦)"></td>
                             </tr>
                         </table>

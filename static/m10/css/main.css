@@ -144,7 +144,7 @@ footer h3{text-align: center;}
 
 
 /*******************************************************************************/
-@media screen and  (max-width: 800px) {
+@media screen and  (max-width: 768px) {
   .container1{
       width: 150px;
       height: 150px;

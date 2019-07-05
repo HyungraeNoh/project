@@ -36,14 +36,18 @@
             $(window).resize(function() {
                 var sx = Number($(window).width());
                 var index = $(".cb-col").index(this);
-                if(sx > 801) {
-                    $(".cb-col").prop("checked", true);
+                if(sx > 768) {
+                  $(".cb-col").prop("checked", true);
                 } else if(sx > 576) {
-                    $(".cb-col").eq(5).prop("checked", false);
+                  $(".cb-col").eq(3).prop("checked",true);
+                  $(".cb-col").eq(4).prop("checked",false);
+                  $(".cb-col").eq(5).prop("checked", false);
                 }
                 else {
-                    $(".cb-col").eq(5).prop("checked", false);
-                  }
+                  $(".cb-col").eq(3).prop("checked",false);
+                  $(".cb-col").eq(4).prop("checked",false);
+                  $(".cb-col").eq(5).prop("checked", false);
+                }
                 colHS();
 
 
@@ -55,9 +59,9 @@
                       $(".col-body").eq(i).find("li").eq(x).removeClass("dn");
                     } else {
                       $(".col-body").eq(i).find("li").eq(x).addClass("dn");
-                    }
                   }
                 }
+            }
                   /*
                 var cnt = $(".cb-col").filter(":checked").length;
                 var width = Number($(".col-body").css("width").replace("px", "")) / cnt;
@@ -66,17 +70,26 @@
             }
             function checkLine(){
                 var win = $(window).width();
-                if(win >100 && win < 801){
-                    if($(".cb-col").eq(5).prop("checked")){
-                           $(".cb-col").eq(5).prop("checked",false);
-                    }
-
+                if(win >576 && win < 768){
+                  if($(".cb-col").eq(4).prop("checked")) {
+                    $(".cb-col").eq(4).prop("checked",false);
+                    $(".cb-col").eq(5).prop("checked", false);
+                  }
+              }else if (win < 576) {
+                if($(".cb-col").eq(3).prop("checked")) {
+                  $(".cb-col").eq(3).prop("checked",false);
+                  $(".cb-col").eq(4).prop("checked",false);
+                  $(".cb-col").eq(5).prop("checked", false);
                 }
-                colHS();
-            }
-        });
+              }
+              colHS();
+          }
+
+/*************************************************************************************************/
 
 
+
+/*************************************************************************************************/
 //    function openPage(pageName) {
 //        var i;
 //        document.getElementsById("estimateOrder");
@@ -86,6 +99,9 @@
 //
 //    // Get the element with id="defaultOpen" and click on it
 //    document.getElementById("defaultOpen").click();
+/*************************************************************************************************/
+        });
+
     </script>
 </head>
 <body>

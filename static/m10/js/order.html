@@ -54,6 +54,9 @@
                                             <div>
                                                 <div>세  금</div>
                                                 <input type="text" name="10%" placeholder="tax(10%)"  class="textSize1">
+                                                <div style="text-align: center;">
+                                                  <button>적  용</button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -88,6 +91,9 @@
 //                });
 //            });
 
+            function commit() {
+
+            }
             function goBack() {
               location.replace("./totalOrder.html")
             }
@@ -96,20 +102,24 @@
     </head>
     <body>
         <div>
-            <h1>상품구매</h1>
+            <h1>주문/판매</h1>
             <hr>
             <br>
             <div>
+                <div class="center">
+                  <div class="font_box marginBt">주문번호</div>
+                  <input type="text" placeholder="oderNumber" class="textSize2-2">
+                </div>
                 <div class="center">
                     <div class="font_box">판매합계</div>
                     <div >
                         <table border="1" class="tableSize">
                             <tr>
-                                <th>공급가</th>
+                                <th>판매수량</th>
                                 <th>합  계</th>
                             </tr>
                             <tr>
-                                <td><input type="text" placeholder="price (￦)"></td>
+                                <td><input type="text" placeholder="totalAmount"></td>
                                 <td><input type="text" placeholder="totalPrice (￦)"></td>
                             </tr>
                         </table>

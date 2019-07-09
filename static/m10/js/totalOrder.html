@@ -40,12 +40,12 @@
                     $(".cb-col").prop("checked", true);
                 } else if(sx > 576) {
                   $(".cb-col").eq(3).prop("checked", true);
-                  $(".cb-col").eq(4).prop("checked",false);
+                  $(".cb-col").eq(2).prop("checked",false);
                   $(".cb-col").eq(5).prop("checked", false);
                 }
               else {
                 $(".cb-col").eq(3).prop("checked",false);
-                $(".cb-col").eq(4).prop("checked",false);
+                $(".cb-col").eq(2).prop("checked",false);
                 $(".cb-col").eq(5).prop("checked", false);
               }
             });
@@ -59,23 +59,18 @@
                     }
                   }
                 }
-                  /*
-                var cnt = $(".cb-col").filter(":checked").length;
-                var width = Number($(".col-body").css("width").replace("px", "")) / cnt;
-                $(".col-body li").css("width", width + "px");
-                */
             }
             function checkLine(){
                 var win = $(window).width();
                 if(win >576 && win < 768){
-                  if($(".cb-col").eq(4).prop("checked")) {
-                    $(".cb-col").eq(4).prop("checked",false);
+                  if($(".cb-col").eq(2).prop("checked")) {
+                    $(".cb-col").eq(2).prop("checked",false);
                     $(".cb-col").eq(5).prop("checked", false);
                   }
               }else if (win < 576) {
                 if($(".cb-col").eq(3).prop("checked")) {
                   $(".cb-col").eq(3).prop("checked",false);
-                  $(".cb-col").eq(4).prop("checked",false);
+                  $(".cb-col").eq(2).prop("checked",false);
                   $(".cb-col").eq(5).prop("checked", false);
                 }
               }
@@ -107,6 +102,20 @@
                 modal.style.display = "none";
               }
             });
+            var cnt = $(".tab-row").length;
+            var ordertable = `<li class="tab-row" id="myBtn">
+                                <ul class="col-body">
+                                    <li>${cnt}</li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                    <li></li>
+                                </ul>
+                              </li>`;
+            $(".tab-body").append(ordertable);
+            $("#HR_ordertb")
+
 
 /*************************************************************************************************/
 //    function openPage(pageName) {
@@ -125,29 +134,81 @@
 </head>
 <body>
     <div class="nav1">
-        <a href="../index.html"><h2>견적주문</h2></a>
+        <a href="../index.html"><h2>판매계획<br>&<br>주문처리</h2></a>
         <hr>
         <nav>
             <br>
             <div>
-                <a href="./totalEstimate.html"><strong>견적서</strong></a>
+                <a href="./totalEstimate.html"><strong>판매계획</strong></a>
             </div>
             <br>
             <div>
-                <a href="./totalOrder.html"><strong>주문/판매</strong></a>
-            </div>
-            <br>
-            <div>
-                <a href="./totalPurchase.html"><strong>발주/매입</strong></a>
+                <a href="./totalOrder.html"><strong>주문처리</strong></a>
             </div>
         </nav>
     </div>
+    <!-- modal -->
     <div id="myModal" class="modal">
       <div class="modal-content">
         <span class="close">&times;</span>
-        <p>Some text in the Modal..</p>
-      </div>
-    </div>
+        <div id="HR_ordertb">
+            <div>
+                <div class="center">
+                  <div class="font_box marginBt">주문코드</div>
+                  <input type="text" placeholder="orderCode" class="textSize1" id="orderCd">
+                </div>
+                <br>
+                <div class="center">
+                  <div class="font_box marginBt">구  매  처</div>
+                  <input type="text" placeholder="customer" class="textSize1">
+                </div>
+                <br>
+                <div class="center">
+                  <div class="font_box marginBt">승인여부</div>
+                  <input type="submit" placeholder="승 인" class="textSize1">
+                </div>
+                <br>
+                <!-- <div class="center">
+                  <div class="font_box marginBt">주문수량</div>
+                  <input type="text" placeholder="totalAmount" class="textSize1">
+                </div>
+                <br>
+                <div class="center">
+                  <div class="font_box marginBt">합  계</div>
+                  <input type="text" placeholder="totalPrice (￦)" class="textSize1">
+                </div>
+                <br> -->
+                <div class="center">
+                    <div class="font_box marginBt">작 성 자</div>
+                    <input type="text" placeholder="writerNm" class="textSize1" disabled>
+                </div>
+                <br>
+                <div class="center" >
+                    <div class="font_box marginBt">등 록 일</div>
+                    <input type="date" placeholder="date" class="textSize1" disabled>
+                </div>
+                <br>
+                <div>
+                    <div class="font_box marginBt">공급가</div>
+                    <input type="text" placeholder="price(￦)"  class="textSize1" disabled>
+                </div>
+                <br>
+                <div>
+                   <div class="font_box marginBt">수  량</div>
+                    <input type="number" placeholder="amount"  class="textSize1" disabled>
+                </div>
+                <br>
+                <div>
+                    <div class="font_box marginBt">공급가 합계</div>
+                    <input type="text" placeholder="total(￦)"  class="textSize1" disabled>
+                </div>
+                <br>
+                <button type="submit" name="수  정" class="center"></button>
+              </div>
+            </div>
+          </div>
+        </div>
+    <!-- modal end -->
     <section>
         <div class="nav2">
             <div class="dropdown" >
@@ -155,13 +216,12 @@
                 <button type="button" class="dropbtn"><i class="fa fa-list" style="font-size: 24px;"></i></button>
                 <div class="dropdown-content">
                     <a href="../index.html"><strong>HOME</strong></a>
-                    <a href="./totalEstimate.html"><strong>견적서</strong></a>
-                    <a href="./totalOrder.html"><strong>주문판매</strong></a>
-                    <a href="./totalPurchase.html"><strong>발주매입</strong></a>
+                    <a href="./totalEstimate.html"><strong>판매계획</strong></a>
+                    <a href="./totalOrder.html"><strong>주문처리</strong></a>
                 </div>
             </div>
         </div>
-        <div class="headNm">주문 / 판매</div>
+        <div class="headNm">주문 처리</div>
         <br>
         <div id="order" class="padding">
             <div class="body tc">
@@ -179,57 +239,25 @@
                 <ul class="tab-body">
                   <li class="tab-row">
                     <ul class="col-body bg">
-                        <li>NO. <input type="checkbox" name="estimate"></li>
-                        <li><strong>구매상품</strong></li>
-                        <li><strong>수  량</strong></li>
-                        <li><strong>상  태</strong></li>
+                        <li><strong>NO.</strong></li>
+                        <li><strong>주문코드</strong></li>
+                        <li><strong>구매처</strong></li>
+                        <li><strong>승인여부</strong></li>
                         <li><strong>작성자</strong></li>
                         <li><strong>등록일</strong></li>
                     </ul>
                   </li>
                   <li class="tab-row" id="myBtn">
                     <ul class="col-body">
-                        <li><input type="checkbox" name="order"></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-
-                    </ul>
-                  </li>
-                  <li class="tab-row">
-                    <ul class="col-body">
-                        <li><input type="checkbox" name="order"></li>
-                        <li>빔</li>
-                        <li>180</li>
-                        <li>N</li>
-                        <li>구디</li>
-                        <li>20190622</li>
-                    </ul>
-                  </li>
-                  <li class="tab-row">
-                    <ul class="col-body">
-                        <li><input type="checkbox" name="order"></li>
-                        <li>맥주</li>
-                        <li>5000</li>
-                        <li>N</li>
-                        <li>구디</li>
-                        <li>20190623</li>
-                    </ul>
-                  </li>
-                  <li class="tab-row">
-                    <ul class="col-body">
-                        <li><input type="checkbox" name="order"></li>
-                        <li>콤퓨터</li>
-                        <li>3</li>
-                        <li>Y</li>
-                        <li>구디</li>
-                        <li>20190629</li>
+                        <li>1</li>
+                        <li>a1</li>
+                        <li>삼성</li>
+                        <li>진행중</li>
+                        <li>admin</li>
+                        <li>201906</li>
                     </ul>
                   </li>
                 </ul>
-
             </div>
 
 
@@ -240,7 +268,6 @@
             <br>
             <div class="right">
                 <form action="order.html">
-<!--                    <input type="submit" value="수  정">-->
                     <input type="submit" value="글쓰기">
                 </form>
             </div>

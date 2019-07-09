@@ -1,7 +1,8 @@
 html, body {margin: 0; padding: 0;}
 
 .headNm {font-family: cursive; text-align: center; font-size: 50px; background-color: #f1f1f1; padding: 10px 0;}
-
+.right{float: right;}
+.center{align-content: center;}
 .nav1{
     position: fixed;
     width: 20vw;
@@ -12,30 +13,25 @@ html, body {margin: 0; padding: 0;}
     display: block;
     background-color: rgba(229, 223, 223, 0.32);
     overflow-y: scroll;
-
 }
 .nav1 div {text-align: center; font-family: cursive; font-size: 20px;}
 .nav1 div:hover{cursor: pointer; opacity: 0.5; background-color: lightgray;}
-
 .nav2{
     display: none;
     width: 80%;
     float: right;
     background-color: rgba(255, 255, 255, 0);
-
 }
-
+.textSize1 {width: 100%;}
 h2{
     text-align: center;
 }
-
 section {
     float: right;
     width: 80%;
     height: 100%;
     min-height: 755px;
 }
-
 footer {
     float: right;
     clear: both;
@@ -60,14 +56,11 @@ nav {padding: 0 1%;}
     border-radius: 5%;
     font-size: 25px;
     cursor: pointer;
-
 }
-
 .dropdown {
   position: relative;
   padding-left: 5%;
 }
-
 .dropdown-content {
   display: none;
   position: absolute;
@@ -77,58 +70,26 @@ nav {padding: 0 1%;}
     background-color: gray;
     text-align: center;
 }
-
 .dropdown-content a {
   padding: 10px 0;
   text-decoration: none;
   display: block;
 }
-
 .dropdown-content a:hover {background-color: #f1f1f1}
-
 .dropdown:hover
 .dropdown-content {
   background-color: gray;
   display: block;
 }
-
 .dropdown:hover
 .dropbtn {
   background-color: cornflowerblue;
 }
 
 /******************************************************************/
-#estimate {
-    background-color: ;
-}
-
-table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-td, th {
-    border:  1px solid black;
-    padding: 8px;
-}
-/* 라인구분을 위한 색넣기 */
-tr:nth-child(even) {
-  background-color: #dddddd;
-}
-
 .right {float: right;}
 .left {float: left;}
 .padding {padding: 0 15px; box-sizing: border-box;}
-
-/**************************************************************************/
-#order {
-    background-color: ;
-}
-
-/**************************************************************************/
-#purchase {
-    background-color: ;
-}
 /************************************************************************/
 ul {list-style: none; padding-left: 0;}
 .body::after, .col-body::after {content: ""; display: table; clear: both;}
@@ -153,7 +114,7 @@ footer h3{text-align: center;}
 
 
 
-/**************************************************************************/
+/*************************팝업창*************************************************/
 /* The Modal (background) */
 .modal {
   display: none; /* Hidden by default */
@@ -168,7 +129,7 @@ footer h3{text-align: center;}
   background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-/* Modal Content/Box */
+/* ModalContent/Box */
 .modal-content {
   background-color: #fefefe;
   margin: 15% auto; /* 15% from the top and centered */
@@ -176,7 +137,6 @@ footer h3{text-align: center;}
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
 }
-
 /* The Close Button */
 .close {
   color: #aaa;
@@ -184,7 +144,6 @@ footer h3{text-align: center;}
   font-size: 28px;
   font-weight: bold;
 }
-
 .close:hover,
 .close:focus {
   color: black;

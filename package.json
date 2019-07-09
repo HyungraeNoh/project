@@ -1,7 +1,7 @@
 {
   "name": "node",
   "version": "1.0.0",
-  "description": "",
+  "description": "UI 개인 프로젝트",
   "main": "app/app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -20,5 +20,14 @@
     "pm2": "^3.5.1",
     "winston": "^2.4.0",
     "winston-daily-rotate-file": "^1.7.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HyungraeNoh/project.git"
+  },
+  "bugs": {
+    "url": "https://github.com/HyungraeNoh/project/issues"
+  },
+  "homepage": "https://github.com/HyungraeNoh/project#readme"
 }

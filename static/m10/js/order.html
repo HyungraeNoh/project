@@ -6,10 +6,6 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>order</title>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <!--
-                    <i class="fa fa-plus-circle add"></i>
-                    <i class="fa fa-minus-circle"></i>
-        -->
         <link rel="stylesheet" href="../css/order.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
         <script>
@@ -21,21 +17,7 @@
                        var html = `<li>
                                     <div class="row-1">번호 : ${cnt}   |  상품 : ${상품}</div>
                                     <div class="row-2 dn">
-                                        <div>
-                                            <div>기간설정</div>
-                                            <table border="1" style="text-align: center">
-                                                <tr>
-                                                    <th>서비스기간</th>
-                                                    <th>청구일</th>
-                                                    <th>수금일</th>
-                                                </tr>
-                                                <tr>
-                                                    <td><input type="date"></td>
-                                                    <td><input type="date"></td>
-                                                    <td><input type="date"></td>
-                                                </tr>
-                                            </table>
-                                            <br>
+                                        <div>                                        <br>
                                             <div>
                                                 <div>공급가</div>
                                                 <input type="text" placeholder="price(￦)"  class="textSize1">
@@ -52,10 +34,8 @@
                                             </div>
                                             <br>
                                             <div>
-                                                <div>세  금</div>
-                                                <input type="text" name="10%" placeholder="tax(10%)"  class="textSize1">
                                                 <div style="text-align: center;">
-                                                  <button>적  용</button>
+                                                  <button onclick="commit()">적  용</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -83,6 +63,8 @@
                        });
                    }
                })
+
+
             });
 
 //                $(".product .remove").click(function(){
@@ -92,7 +74,7 @@
 //            });
 
             function commit() {
-
+              localstorage.setItem("oderNumber",oderNumber);
             }
             function goBack() {
               location.replace("./totalOrder.html")
@@ -102,20 +84,28 @@
     </head>
     <body>
         <div>
-            <h1>주문/판매</h1>
+            <h1>주문서 작성</h1>
             <hr>
             <br>
             <div>
                 <div class="center">
-                  <div class="font_box marginBt">주문번호</div>
-                  <input type="text" placeholder="oderNumber" class="textSize2-2">
+                  <div class="font_box marginBt">주문코드</div>
+                  <input type="text" placeholder="orderCode" class="textSize2-2" id="orderCd">
                 </div>
                 <div class="center">
-                    <div class="font_box">판매합계</div>
-                    <div >
+                  <div class="font_box marginBt">구  매  처</div>
+                  <input type="text" placeholder="customer" class="textSize2-2">
+                </div>
+                <div class="center">
+                  <div class="font_box marginBt">승인여부</div>
+                  <input type="submit" placeholder="승 인" class="textSize2-2">
+                </div>
+                <div class="center">
+                    <div class="font_box marginBt">판매합계</div>
+                    <div class="left">
                         <table border="1" class="tableSize">
                             <tr>
-                                <th>판매수량</th>
+                                <th>주문수량</th>
                                 <th>합  계</th>
                             </tr>
                             <tr>

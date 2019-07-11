@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>주문서목록</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="../css/orderList.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                checkLine();
+                $(window).resize(function() {
+                    checkLine();
+                    var sx = Number($(window).width());
+                    var index = $(".cb-col").index(this);
+                    if(sx > 768) {
+                        $(".cb-col").prop("checked", true);
+                    } else if(sx > 576) {
+                      $(".cb-col").eq(3).prop("checked", true);
+                      $(".cb-col").eq(2).prop("checked",false);
+                      // $(".cb-col").eq(5).prop("checked", false);
+                    }
+                  else {
+                    $(".cb-col").eq(3).prop("checked",false);
+                    $(".cb-col").eq(2).prop("checked",false);
+                    // $(".cb-col").eq(5).prop("checked", false);
+                  }
+                });
+                function colHS(){
+                    for(var x = 0; x < $(".cb-col").length; x++){
+                      for(var i = 0; i < $(".col-body").length; i++){
+                        if($(".cb-col").eq(x).prop("checked")){
+                          $(".col-body").eq(i).find("li").eq(x).removeClass("dn");
+                        } else {
+                          $(".col-body").eq(i).find("li").eq(x).addClass("dn");
+                        }
+                      }
+                    }
+                }
+                function checkLine(){
+                    var win = $(window).width();
+                    if(win >576 && win < 768){
+                      if($(".cb-col").eq(2).prop("checked")) {
+                        $(".cb-col").eq(2).prop("checked",false);
+                        // $(".cb-col").eq(5).prop("checked", false);
+                      }
+                  }else if (win < 576) {
+                    if($(".cb-col").eq(3).prop("checked")) {
+                      $(".cb-col").eq(3).prop("checked",false);
+                      $(".cb-col").eq(2).prop("checked",false);
+                      // $(".cb-col").eq(5).prop("checked", false);
+                    }
+                  }
+                  colHS();
+                }
+
+                var modal = document.getElementById("myModal");
+                var btn = document.getElementById("myBtn");
+                var span = document.getElementsByClassName("close")[0];
+                $(btn).click(function() {
+                  modal.style.display = "block";
+                });
+                $(span).click(function() {
+                  modal.style.display = "none";
+                });
+
+                $("#orderNb").attr().val('${cnt}');
+            });
+        </script>
+    </head>
+    <body>
+        <header>
+            <h1>주문서 목록</h1>
+            <form action="../index.html" style="margin : 0 10px;">
+                <input type="submit" value="판매목록">
+            </form>
+        </header>
+        <!-- modal -->
+        <div id="myModal" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="HR_ordertb">
+                <div>
+                  <br>
+                    <div>
+                      <div class="fontSize1">주문번호</div>
+                      <input type="text" placeholder="orderNumber" class="textSize1" id="orderNb" disabled>
+                    </div>
+                    <br>
+                    <div>
+                      <div class="fontSize1">등록번호</div>
+                      <input type="text" placeholder="estimateNumber" class="textSize1" disabled>
+                    </div>
+                    <br>
+                    <div>
+                      <div class="fontSize1">구매상품</div>
+                      <input type="text" placeholder="object" class="textSize1" disabled>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="fontSize1">공 급 가</div>
+                        <input type="text" placeholder="price(￦)"  class="textSize1" disabled>
+                    </div>
+                    <br>
+                    <div>
+                       <div class="fontSize1">수   량</div>
+                        <input type="number" placeholder="amount"  class="textSize1" disabled>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="fontSize1">등 록 인</div>
+                        <input type="text" placeholder="writerNm" class="textSize1" disabled>
+                        <span id="writer"></span>
+                    </div>
+                    <br>
+                    <div>
+                        <div class="fontSize1">등록날짜</div>
+                        <input type="date" placeholder="date" class="textSize1" disabled>
+                        <span id="date"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        <!-- modal end -->
+        <section>
+            <div id="order" class="padding">
+                <div class="body tc">
+                <span id="check-body">
+                  <input type="checkbox" class="cb-col" checked>
+                  <input type="checkbox" class="cb-col" checked>
+                  <input type="checkbox" class="cb-col" checked>
+                  <input type="checkbox" class="cb-col" checked>
+                  <input type="checkbox" class="cb-col" checked>
+                  <input type="checkbox" class="cb-col" checked>
+                </span>
+                <button type="button" id="checkbox">확인</button>
+              </div>
+                <div class="body">
+                    <ul class="tab-body">
+                      <li class="tab-row">
+                        <ul class="col-body bg">
+                            <li><strong>주문번호</strong></li>
+                            <li><strong>등록번호</strong></li>
+                            <li><strong>등록인</strong></li>
+                            <li><strong>등록날짜</strong></li>
+                            <li><strong>삭제여부</strong></li>
+                        </ul>
+                      </li>
+                      <li class="tab-row" id="myBtn">
+                        <ul class="col-body">
+                            <li>201907-1</li>
+                            <li>a1</li>
+                            <li>삼성</li>
+                            <li>201906</li>
+                            <li>N</li>
+                        </ul>
+                      </li>
+                    </ul>
+                </div>
+                <br>
+                <div class="right" style="margin-right : 10px;">
+                  <form action="order.html">
+                      <input type="submit" value="등 록">
+                  </form>
+                </div>
+            </div>
+        </section>
+        <footer>
+
+        </footer>
+    </body>
+</html>

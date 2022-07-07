@@ -16,7 +16,7 @@
     "express-error-handler": "^1.1.0",
     "express-session": "^1.16.2",
     "mariadb": "^2.0.5",
-    "moment": "^2.19.3",
+    "moment": "^2.29.4",
     "pm2": "^3.5.1",
     "winston": "^2.4.0",
     "winston-daily-rotate-file": "^1.7.2"
